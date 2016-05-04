@@ -1,6 +1,6 @@
 $(function() {
 	var cdn = config.cdn + "js/";
-    var v = new Date();
+    var v = Date.parse(new Date());
     var page = location.pathname.replace(/(.+)[＼＼/]/,"");
     page = page.substr(0, page.lastIndexOf("."));
 

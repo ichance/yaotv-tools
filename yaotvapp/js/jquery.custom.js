@@ -29,7 +29,7 @@ var loadScript = (function() {
         var ret = [];
         var v = "";
         if(typeof nocache != "undefined") {
-        	v = new Date();
+        	v = Date.parse(new Date());
         }
         for (var i = 0; i < urls.length; i++) {
             ret[i] = loadOne(urls[i] + "?v=" + v);

@@ -17,7 +17,7 @@
 
 <body>
     <script src="//yaotv.qq.com/shake_tv/include/js/jsapi.js"></script>
-    <script src="//o0vslv5hc.qnssl.com/js/jquery.custom.js?v=2"></script>
+    <script src="//o0vslv5hc.qnssl.com/js/jquery.custom.js?v=3"></script>
 
     <div class="wrapper"></div>
     <div class="loader page-loading"><div class="loader-inner ball-scale-multiple"><div></div><div></div><div></div></div></div>
@@ -27,7 +27,7 @@
         var channelId = <%= channelId%>;
         <% } %>
         loadScript.load(["<%= cdn%>js/config.js"], "nocache").done(function() {
-            var v = new Date();
+            var v = Date.parse(new Date());
             $.insertCss(config.cdn+'css/app.css?v' + v);
             $.insertJs(config.cdn+'js/loader.js?v' + v);
         });

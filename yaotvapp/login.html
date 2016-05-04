@@ -25,7 +25,7 @@
 	$(function() {
 		var cdn = "js/";
 	    var commonFileList = [cdn +"config.js", cdn +"util.js"];
-	    var v = new Date();
+	    var v = Date.parse(new Date());
 
 	    var page = location.pathname.replace(/(.+)[＼＼/]/,"");
 

@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="note_layer" id="logining">节目加载中... 请稍后!</div>
-<script src="<%= cdn%>js/jquery.custom.js"></script>
+<script src="<%= cdn%>js/jquery.custom.js?v=3"></script>
 <script>
 	<% if (channelId) { %>
     var channelId = <%= channelId%>;
@@ -25,7 +25,7 @@
 	$(function() {
 		var cdn = "<%= cdn%>js/";
 	    var commonFileList = [cdn +"config.js", cdn +"util.js"];
-	    var v = new Date();
+	    var v = Date.parse(new Date());
 
 	    var page = location.pathname.replace(/(.+)[＼＼/]/,"");
 
