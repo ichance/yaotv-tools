@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>节目加载中...</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0; ">
+<script src="https://wximg.gtimg.com/shake_tv/include/js/jsapi.js"></script>
+
+<style type="text/css">
+.note_layer{position: fixed; font-size: 16px; white-space: nowrap; left: 50%; top: 50%; background-color: rgba(0,0,0,.3); color: #fff; border-radius: 10px; padding: 7px 14px 9px; z-index: 200; -webkit-transform: translate(-50%,-50%); display: none;
+   -moz-transform: translate(-50%,-50%);
+   -ms-transform: translate(-50%,-50%);
+   -o-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+}
+</style>
+</head>
+<body>
+<div class="note_layer" id="logining">节目加载中... 请稍后!</div>
+<script src="<%= cdn%>js/jquery.custom.js"></script>
+<script>
+	<% if (channelId) { %>
+    var channelId = <%= channelId%>;
+    <% } %>
+	$(function() {
+		var cdn = "<%= cdn%>js/";
+	    var commonFileList = [cdn +"config.js", cdn +"util.js"];
+	    var v = new Date();
+
+	    var page = location.pathname.replace(/(.+)[＼＼/]/,"");
+
+	    loadScript.load(commonFileList, "nocache").done(function() {
+			$.insertJs(cdn + page.substr(0, page.lastIndexOf(".")) + ".js?v=" + v);
+		}); 
+	});
+</script>
+</body>
+</html>
