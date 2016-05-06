@@ -21,7 +21,8 @@ git clone https://github.com/jShi-git/yaotv-tools
 ```bash
 cd tools
 ./build.js    //生成默认页面
-./flush.js js/index.js    //同步到七牛
+./flush.js ../js/index.js    //同步到七牛
+./flush.js -r ../js    //同步目录到七牛
 ```
 
 ## 效果预览
@@ -31,4 +32,4 @@ cd tools
 
 
 ## TODO LIST
-- [ ] 批量同步七牛
+- [x] 批量同步七牛
